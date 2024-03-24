@@ -22,12 +22,12 @@ formRef.addEventListener('input', addLocalStorage);
 function addLocalStorage() {
     const objMessage = JSON.stringify({ email: formRef.elements.email.value.trim(), message: formRef.elements.message.value.trim() });
     localStorage.setItem(KEY_MESSAGE, objMessage);
-}
+};
 
-function removeLocalStorage(event) {
+function removeLocalStorage() {
     localStorage.removeItem(KEY_MESSAGE);
     formRef.elements.email.value = '';
     formRef.elements.message.value = '';
-}
+};
 
 formRef.addEventListener('reset', removeLocalStorage);
